@@ -32,8 +32,13 @@ screen.onkey(snake.move_right, "d")
 
 while is_game_on:
     screen.update()
-    time.sleep(0.1)
+    time.sleep(0.05)
 
     snake.move()
+
+    # detect collision with food
+    if snake.head.distance(food) < (MOVE_DISTANCE - 5):
+        food.refresh()
+        # snake.extend()
 
 screen.exitonclick()
