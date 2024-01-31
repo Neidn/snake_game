@@ -18,7 +18,7 @@ screen.bgcolor("black")
 screen.title("Snake Game")
 screen.tracer(0)
 
-# Listen to key strokes
+# Listen to keystrokes
 screen.listen()
 
 # Move snake
@@ -41,7 +41,7 @@ while is_game_on:
     if snake.head.distance(food) < (MOVE_DISTANCE - 5):
         food.refresh()
         scoreboard.increase_score()
-        # snake.extend()
+        snake.extend()
 
     # detect collision with wall
     if snake.head.xcor() > WIDTH_HALF or snake.head.xcor() < -WIDTH_HALF or snake.head.ycor() > HEIGHT_HALF or snake.head.ycor() < -HEIGHT_HALF:

@@ -1,4 +1,4 @@
-TARGET_DIR = service
+TARGET_DIR = .
 
 test: ## Run the unit tests
 	$(info Running tests...)
