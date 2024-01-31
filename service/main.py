@@ -1,10 +1,10 @@
 from turtle import Screen
 import time
 
-from snake import Snake
-from config import *
-from food import Food
-from scoreboard import ScoreBoard
+from service.snake import Snake
+from service.config import *
+from service.food import Food
+from service.scoreboard import ScoreBoard
 
 is_game_on = True
 

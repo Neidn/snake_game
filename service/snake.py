@@ -1,10 +1,12 @@
 from turtle import Turtle
 
-from config import *
+from service.config import *
+
 
 class Snake(Turtle):
     def __init__(self):
         super().__init__()
+        self.head = None
         self.segment_list = []
         self.create_snake()
 

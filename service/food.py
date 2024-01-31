@@ -1,7 +1,7 @@
 from turtle import Turtle
 import random
 
-from config import *
+from service.config import *
 
 
 class Food(Turtle):

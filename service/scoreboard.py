@@ -1,6 +1,6 @@
 from turtle import Turtle
 
-from config import *
+from service.config import *
 
 
 class ScoreBoard(Turtle):
@@ -21,3 +21,8 @@ class ScoreBoard(Turtle):
     def increase_score(self):
         self.score += 1
         self.update_score()
+
+    def game_over(self):
+        self.goto(0, 0)
+        self.color("red")
+        self.write("GAME OVER", align=ALIGNMENT, font=FONT)
