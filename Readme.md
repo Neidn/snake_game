@@ -3,7 +3,7 @@
 ## Description
 
 This is a simple snake game made with python and turtle graphics.
-This game is made for fun and to learn python.
+This game is made for fun
 This game is tested automatically with nose and coverage.
 
 ## dependencies
@@ -22,7 +22,7 @@ To install the game you need to clone the repository and install the requirement
 
 ```bash
 git clone
-cd snake-game
+cd snake_game
 pip install -r requirements.txt
 ```
 
