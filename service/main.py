@@ -1,20 +1,18 @@
 from turtle import Screen
-from snake import Snake
 import time
 
-size = dict(
-    width=600,
-    height=600,
-    width_half=300,
-    height_half=300,
-)
+from snake import Snake
+from config import *
+from food import Food
 
 is_game_on = True
 
 snake = Snake()
 
+food = Food()
+
 screen = Screen()
-screen.setup(width=size["width"], height=size["height"])
+screen.setup(width=WIDTH, height=HEIGHT)
 screen.bgcolor("black")
 screen.title("Snake Game")
 screen.tracer(0)
@@ -23,14 +21,14 @@ screen.tracer(0)
 screen.listen()
 
 # Move snake
-screen.onkey(snake.up, "Up")
-screen.onkey(snake.up, "w")
-screen.onkey(snake.down, "Down")
-screen.onkey(snake.down, "s")
-screen.onkey(snake.left, "Left")
-screen.onkey(snake.left, "a")
-screen.onkey(snake.right, "Right")
-screen.onkey(snake.right, "d")
+screen.onkey(snake.move_up, "Up")
+screen.onkey(snake.move_up, "w")
+screen.onkey(snake.move_down, "Down")
+screen.onkey(snake.move_down, "s")
+screen.onkey(snake.move_left, "Left")
+screen.onkey(snake.move_left, "a")
+screen.onkey(snake.move_right, "Right")
+screen.onkey(snake.move_right, "d")
 
 while is_game_on:
     screen.update()
