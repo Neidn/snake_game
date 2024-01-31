@@ -9,5 +9,7 @@ DOWN = 270
 LEFT = 180
 RIGHT = 0
 
-
 STARTING_POSITIONS = [(0, 0), (-MOVE_DISTANCE, 0), (-MOVE_DISTANCE * 2, 0)]
+
+ALIGNMENT = "center"
+FONT = ("Courier", 24, "normal")
