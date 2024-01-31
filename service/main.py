@@ -29,9 +29,19 @@ for position in starting_position:
 while is_game_on:
     screen.update()
     time.sleep(0.2)
-    for segement in segement_list:
-        segement.forward(20)
 
-    segement_list[0].left(90)
+    # Move segement
+    # segement_list[0].forward(20)
+    # segement_list[1].goto(segement_list[0].position())
+    # segement_list[2].goto(segement_list[1].position())
+
+    for segement in range(len(segement_list) - 1, 0, -1):
+        new_x = segement_list[segement - 1].xcor()
+        new_y = segement_list[segement - 1].ycor()
+        segement_list[segement].goto(new_x, new_y)
+
+    segement_list[0].forward(20)
+
+
 
 screen.exitonclick()
