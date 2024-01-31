@@ -3,9 +3,7 @@
 ######################################################################
 # pylint: disable=too-many-public-methods
 import unittest
-from unittest import mock
 
-from service import snake
 from service.snake import Snake
 
 
