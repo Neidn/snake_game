@@ -1,4 +1,5 @@
-from turtle import Turtle, Screen
+from turtle import Screen
+from snake import Snake
 import time
 
 size = dict(
@@ -9,8 +10,8 @@ size = dict(
 )
 
 is_game_on = True
-starting_position = [(0, 0), (-20, 0), (-40, 0)]
-segement_list = []
+
+snake = Snake()
 
 screen = Screen()
 screen.setup(width=size["width"], height=size["height"])
@@ -18,30 +19,23 @@ screen.bgcolor("black")
 screen.title("Snake Game")
 screen.tracer(0)
 
-for position in starting_position:
-    segement = Turtle("square")
-    segement.color("white")
-    segement.penup()
-    segement.goto(position)
-    segement_list.append(segement)
-    screen.update()
+# Listen to key strokes
+screen.listen()
+
+# Move snake
+screen.onkey(snake.up, "Up")
+screen.onkey(snake.up, "w")
+screen.onkey(snake.down, "Down")
+screen.onkey(snake.down, "s")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.left, "a")
+screen.onkey(snake.right, "Right")
+screen.onkey(snake.right, "d")
 
 while is_game_on:
     screen.update()
-    time.sleep(0.2)
+    time.sleep(0.1)
 
-    # Move segement
-    # segement_list[0].forward(20)
-    # segement_list[1].goto(segement_list[0].position())
-    # segement_list[2].goto(segement_list[1].position())
-
-    for segement in range(len(segement_list) - 1, 0, -1):
-        new_x = segement_list[segement - 1].xcor()
-        new_y = segement_list[segement - 1].ycor()
-        segement_list[segement].goto(new_x, new_y)
-
-    segement_list[0].forward(20)
-
-
+    snake.move()
 
 screen.exitonclick()
